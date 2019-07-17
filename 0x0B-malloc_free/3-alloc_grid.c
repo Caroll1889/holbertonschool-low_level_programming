@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* **aloc_grid - return a pointer to a 2 dimensinal array
+*  **alloc_grid - return a pointer to a 2 dimensional array
 *@width: width
 *@height: height
 *Return: yo
@@ -29,7 +29,7 @@ int **alloc_grid(int width, int height)
 		{
 			for (c = 0; c < d; c++)
 			{
-				free(yo[d]);
+				free(yo[c]);
 			}
 			free(yo);
 			return (NULL);
