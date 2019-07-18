@@ -37,11 +37,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		over[c] = s1[c];
 	}
 	b = 0;
-	while (s2[b] != '\0' && b < n)
+	for (b = 0; s2[b] && b < n; b++, c++)
 	{
 		over[c] = s2[b];
-		c++;
-		b++;
 	}
+	over[c] = '\0';
 	return (over);
 }
