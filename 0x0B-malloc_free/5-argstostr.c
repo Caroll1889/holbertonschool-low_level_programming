@@ -29,7 +29,6 @@ char *argstostr(int ac, char **av)
 	mas++;
 
 	ret = malloc(mas * sizeof(char));
-	k = ret;
 
 	if (ret == NULL)
 	{
