@@ -2,6 +2,19 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
+* _strlen - length
+*@s: string
+*Return: length
+*/
+int _strlen(char *s)
+{
+	int len;
+
+	while (s[len] != '\0')
+		len++;
+	return (len);
+}
+/**
 * *_strcpy - copies
 *@dest: destiny
 *@src: source
@@ -30,25 +43,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 	char *nname, *nowner;
-	int l, r;
 
 	new_dog = malloc(sizeof(struct dog));
 	if (new_dog == NULL)
 	{
 		return (NULL);
 	}
-	for (l = 0; l != '\0'; l++)
-	;
-	for (r = 0; r != '\0'; r++)
-	;
-	nname = malloc(sizeof(char *) * (l + 1));
+	nname = malloc(sizeof(char *) * (_strlen(name) + 1));
 	if (nname == NULL)
 	{
 		free(nname);
 		free(new_dog);
 		return (NULL);
 	}
-	nowner = malloc(sizeof(char *) * (r + 1));
+	nowner = malloc(sizeof(char *) * (_strlen(owner) + 1));
 	if (nowner == NULL)
 	{
 		free(nowner);
