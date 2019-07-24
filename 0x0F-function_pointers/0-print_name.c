@@ -1,5 +1,3 @@
-#include "function_pointers.h"
-
 /**
 *print_name - print a name
 *@name: name
@@ -11,7 +9,7 @@ void print_name(char *name, void (*f)(char *))
 {
 	void (*dc)(char *);
 
-	if (name == NULL || f == NULL)
+	if (name == 0 || f == 0)
 	{
 		return;
 	}
