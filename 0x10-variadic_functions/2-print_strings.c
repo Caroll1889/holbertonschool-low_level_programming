@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (js == NULL)
 		{
-			printf("nil");
+			printf("(nil)");
 		}
 		else
 		{
