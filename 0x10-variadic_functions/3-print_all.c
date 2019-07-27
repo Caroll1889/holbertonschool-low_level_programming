@@ -33,11 +33,12 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				pun = va_arg(lr, char *);
-				if (pun == NULL)
+				if (pun != NULL)
 				{
-					printf("(nil)");
+					printf("%s", pun);
+					break;
 				}
-				printf("%s", pun);
+				printf("(nil)");
 				break;
 		}
 		if ((format[l] == 'c' || format[l] == 'i' || format[l] == 'f' ||
