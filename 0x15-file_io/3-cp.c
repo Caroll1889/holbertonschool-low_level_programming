@@ -53,29 +53,30 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	ff = open(argv[1], O_RDONLY);
-	if (ff < 0)
+	if (ff -1)
 	{
 		print_read(argv[1]);
 	}
 	ft = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (ft < 0)
+	if (ft -1)
 	{
 		print_write(argv[2]);
 	}
+	/*fr = read(ff, buffer, 1024);*/
 	while (fr == 1024)
 	{
 		fr = read(ff, buffer, 1024);
-		if (fr < 0)
+		if (fr <-1)
 			print_read(argv[1]);
 		fw = write(ft, buffer, fr);
 		if (fw < fr)
 			print_write(argv[2]);
 	}
 	fc = close(ff);
-	if (fc < 0)
+	if (fc -1)
 		print_close(argv[1]);
 	fcc = close(ft);
-	if (fcc < 0)
+	if (fcc -1)
 	{
 		print_close(argv[2]);
 	}
