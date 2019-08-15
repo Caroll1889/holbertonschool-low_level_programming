@@ -44,7 +44,7 @@ void print_read(char *file)
 
 int main(int argc, char **argv)
 {
-	int ff, ft, fr = 1024, fw, fc, fcc;
+	int ff = 0, ft = 0, fr = 1024, fw = 0, fc = 0, fcc = 0;
 	char buffer[1024];
 
 	if (argc != 3)
