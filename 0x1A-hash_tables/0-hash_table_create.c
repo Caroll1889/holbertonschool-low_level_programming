@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * *hash_table_create - creates a hash table
+ * hash_table_create - creates a hash table
  *@size: size of the array
  *Return: new_table
 */
@@ -25,7 +25,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	new_table->array = calloc(size, sizeof(hash_node_t *));
 
 	if (new_table->array == NULL)
-	return (NULL);
+		return (NULL);
 
 	return (new_table);
 }
+
