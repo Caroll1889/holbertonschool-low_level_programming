@@ -45,8 +45,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/* el siguente del nuevo va a apuntar al que ya estaba */
 		new->next = ht->array[idx];
 		ht->array[idx] = new; /* hacer que el nuevo nodo sea la cabeza */
-		return (1);
 	}
-	return (0);
+	return (1);
 }
 
