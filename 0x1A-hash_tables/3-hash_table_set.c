@@ -15,15 +15,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (key == NULL || ht == NULL || value == NULL)
 		return (0);
-	idx = key_index(const char *key, ht->size)
+	idx = key_index((unsigned char *)key, ht->size);
 
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
-		return (NULL);
+		return (0);
 
 	new->key = strdup(key);
 	new->value = strdup(value);
-	new->node = NULL
+	new->next = NULL;
 
 	if (ht->array[idx] == NULL) /*esta es la cabeza */
 		ht->array[idx] = new;
