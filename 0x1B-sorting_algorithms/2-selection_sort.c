@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
-* selection_sort - sort an array using Selection Sort 
+* selection_sort - sort an array using Selection Sort
 * @array: array
 * @size: size
 * Return: nothing
@@ -32,4 +32,4 @@ void selection_sort(int *array, size_t size)
 		array[min] = tmp;
 		print_array(array, size);
 	}
-} 
+}
