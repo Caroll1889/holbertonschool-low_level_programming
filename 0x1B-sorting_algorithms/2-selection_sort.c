@@ -25,11 +25,15 @@ void selection_sort(int *array, size_t size)
 			if (array[c] < array[min])
 			{
 				min = c;
+			
 			}
 		}
-		tmp = array[d];
-		array[d] = array[min];
-		array[min] = tmp;
-		print_array(array, size);
+		if (min != d)
+		{
+			tmp = array[d];
+			array[d] = array[min];
+			array[min] = tmp;
+			print_array(array, size);
+		}
 	}
 }
