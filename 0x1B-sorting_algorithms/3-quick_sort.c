@@ -19,12 +19,13 @@ void quick_sort(int *array, size_t size)
 /**
 * _partition - partition
 * @array: array
-* @low: low 
+* @low: low
 * @high: high
+* @size: size
 * Return: i + 1
 **/
 
-int _partition (int *array, int low, int high, size_t size)
+int _partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
 	int i = (low - 1);
@@ -59,6 +60,7 @@ int _partition (int *array, int low, int high, size_t size)
 
 /**
 * _quicksort - sort a partition
+* @array: array
 * @low: low
 * @high: high
 * @size: size
