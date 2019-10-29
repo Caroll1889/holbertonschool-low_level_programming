@@ -9,71 +9,71 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp, *h_move, *idx;
+	listint_t *tem, *move, *index;
 
 	if (list == NULL || *list == NULL)
 		return;
 
-	h_move = *list;
-	idx = *list;
-	temp = *list;
-	while (h_move != NULL)
+	move = *list;
+	index = *list;
+	tem = *list;
+	while (move != NULL)
 	{
-		if (h_move == idx)
-			h_move = h_move->next;
-		else if (h_move != NULL && h_move->n < h_move->prev->n)
+		if (move == index)
+			move = move->next;
+		else if (move != NULL && move->n < move->prev->n)
 		{
-			temp = h_move;
-			h_move = h_move->next;
-			temp->prev->next = temp->next;
-			if (h_move)
-				temp->next->prev = temp->prev;
-			temp->prev = temp->prev->prev;
-			temp->next = temp->prev->next;
-			temp->prev->next = temp;
-			temp->next->prev = temp;
+			tem = move;
+			move = move->next;
+			tem->prev->next = tem->next;
+			if (move)
+				tem->next->prev = tem->prev;
+			tem->prev = tem->prev->prev;
+			tem->next = tem->prev->next;
+			tem->prev->next = tem;
+			tem->next->prev = tem;
 			print_list(*list);
-			check(temp, list);
+			check(tem, list);
 		}
 		else
 		{
-			h_move = h_move->next;
+			move = move->next;
 		}
 	}
 }
 
 /**
 * check - sort the list
-*@temp: temporal
+*@tem: temporal
 *@list: double linked list
 *Return: Nothing
 **/
 
-void check(listint_t *temp, listint_t **list)
+void check(listint_t *tem, listint_t **list)
 {
-	while (temp->prev != NULL)
+	while (tem->prev != NULL)
 	{
-		if (temp->n < temp->prev->n)
+		if (tem->n < tem->prev->n)
 		{
-			temp->prev->next = temp->next;
-			temp->next->prev = temp->prev;
-			if (temp->prev->prev == NULL)
+			tem->prev->next = tem->next;
+			tem->next->prev = tem->prev;
+			if (tem->prev->prev == NULL)
 			{
-				*list = temp;
-				temp->next = temp->prev;
-				temp->prev = NULL;
+				*list = tem;
+				tem->next = tem->prev;
+				tem->prev = NULL;
 			}
 			else
 			{
-				temp->prev = temp->prev->prev;
-				temp->next = temp->prev->next;
-				temp->prev->next = temp;
+				tem->prev = tem->prev->prev;
+				tem->next = tem->prev->next;
+				tem->prev->next = tem;
 			}
-			temp->next->prev = temp;
+			tem->next->prev = tem;
 			print_list(*list);
 		}
 		else
-			temp = temp->prev;
+			tem = tem->prev;
 	}
 }
 
