@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
-* *inserton_sort_list - sorted a double linked list using insertion sort
+*insertion_sort_list - sorted a double linked list using insertion sort
 *@list: double linked list
 *Return: Nothing
 **/
@@ -42,6 +42,13 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 
+/**
+* check - sort the list
+*@temp: temporal
+*@list: double linked list
+*Return: Nothing
+**/
+
 void check(listint_t *temp, listint_t **list)
 {
 	while (temp->prev != NULL)
@@ -63,7 +70,7 @@ void check(listint_t *temp, listint_t **list)
 				temp->prev->next = temp;
 			}
 			temp->next->prev = temp;
-			print_list(*list); 
+			print_list(*list);
 		}
 		else
 			temp = temp->prev;
