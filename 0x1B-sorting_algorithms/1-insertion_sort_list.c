@@ -9,7 +9,7 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tem, *move, *index;
+	listint_t *tem = NULL, *move = NULL, *index = NULL, *head = NULL;
 
 	if (list == NULL || *list == NULL)
 		return;
@@ -19,25 +19,34 @@ void insertion_sort_list(listint_t **list)
 	tem = *list;
 	while (move != NULL)
 	{
-		if (move == index)
+		head = *list;
+		if (move == head)
 			move = move->next;
 		else if (move != NULL && move->n < move->prev->n)
 		{
 			tem = move;
 			move = move->next;
-			tem->prev->next = tem->next;
+			tem->next = index;
+			index->next = move;
+			tem->prev = index->prev;
+			if (index->prev)
+				index->prev->next = tem;
+			index->prev = tem;
 			if (move)
-				tem->next->prev = tem->prev;
-			tem->prev = tem->prev->prev;
-			tem->next = tem->prev->next;
-			tem->prev->next = tem;
-			tem->next->prev = tem;
+				move->prev = index;
+			if (head == index)
+				*list = tem;
+			else if (head != tem)
+				*list = head;
+			else
+				*list = tem;
 			print_list(*list);
 			check(tem, list);
 		}
 		else
 		{
 			move = move->next;
+			index = index->next;
 		}
 	}
 }
