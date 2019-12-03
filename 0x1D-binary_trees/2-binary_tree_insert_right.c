@@ -2,9 +2,9 @@
 
 /**
 * *binary_tree_insert_right - inserts a node as the right-child
-* parent: pointer to the node to insert the left child in 
-* value: value to put in the new node
-* Return: n_node
+*@parent: pointer to the node to insert the left child in
+*@value: value to put in the new node
+*Return: n_node
 **/
 
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
@@ -30,7 +30,7 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		temp = parent->right;
 		parent->right = n_node;
 		n_node->right = temp;
-		temp->parent = n_node; 
+		temp->parent = n_node;
 	}
 	else
 	{

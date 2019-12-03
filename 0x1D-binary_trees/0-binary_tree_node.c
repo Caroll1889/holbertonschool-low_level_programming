@@ -3,9 +3,9 @@
 
 /**
 * *binary_tree_node - create a binary tree
-* parent: pointer to the parent node
-* value: value to put in the new node
-* Return: n_node
+*@parent: pointer to the parent node
+*@value: value to put in the new node
+*Return: n_node
 **/
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
